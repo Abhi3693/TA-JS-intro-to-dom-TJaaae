@@ -1,5 +1,5 @@
 // 1. Change the title of the page to `Hello AltCampus!`
-document.title = "Hello AltCampus"
+document.title = "Hello AltCampus";
 
 // 2. Select the element using the children property:
 h1 = document.body.children[0];
@@ -8,14 +8,16 @@ h1 = document.body.children[0];
 h1.innerText = "Learning DOM";
 
 //    - Select the first `li` element inside the `ul` with class `topics` and change the innerText to `all about document`
+document.body.children[5].children[0].innerText = "All about document"
 let topics = document.querySelector("li");
 topics = `all about document`;
 
 //    - Select the input element with name `email`
+document.body.children[5];
 let inputEmail = document.querySelector(".email");
 
 // 3. Log the number (using console.log) of children of all the `li` element inside the ul with class `topics`
- let ul = document.querySelector(".topics");
+ let ul = document.body.children[5].children[0];
 console.log(ul.children.length);
 
 // 4. Select the first input using the `type` selector and store them in variable named `emailInput`
@@ -31,43 +33,44 @@ let lable = document.querySelector("label");
 let inputCheckbox = document.getElementById("remember");
 
 // 8. Select the input of type password using Attribute selectors. (eg: input[type="text"]) and store in `password`
-let password = document.querySelectorAll("input[type=password]")
+let password = document.querySelector('input[type="password"]');
 
 // 9. Select the input using the placeholder attribute selector with value `password` and store in `attrPassword`
-let attrPassword = document.querySelectorAll("input[type=placeholder]")
+let attrPassword = document.querySelector('input[placeholder="password"]');
 
 // 10. Select all the `li` element and store in `allTopics`
-let allTopics = document.querySelectorAll("li")
+let allTopics = document.querySelectorAll("li");
 
 // 11. Select all the input element of any type and store in `allInput`
 let allInput = document.querySelectorAll("input");
+//console.log(allInput);
 
 // 12. Use forEach to console the `innerText` property of all the li element in `allTopics` variable.
-allInput.forEach((val)=> console.log(val.innerText));
+allTopics.forEach((elm)=> console.log(elm.innerText));
 
 // 13. Select all the elements with class `list` and store in variable `listOfSelectedTopics`
 let listOfSelectedTopics = document.querySelectorAll(".list");
 
 // 14. Select the first li element inside the `ul` element using `>` (direct child) and store in `firstLi`
-let firstLi = ul.firstElementChild;
+let firstLi = document.querySelector("ul>li");
 
 // 15. Select all the img element and log the number of element saying `The total number of img element is ---`
 let allImg = document.querySelectorAll("img");
-console.log(`The total number of img element is ${allImg}`);
+console.log(`The total number of img element is ${allImg.length}`);
 
 // 16. Select all the `p` element and store in `allPElement`
 let allPElement = document.querySelectorAll("p");
 
 // 17. Select all the buttons and log the count of buttons.
-let allButtons = document.querySelectorAll("button")
-//console.log("")
+let allButtons = document.querySelectorAll("button");
+console.log(allButtons.length);
 
 // 18. Select all the `label` element and log the count.
 let allLabel = document.querySelectorAll("label");
 console.log(allLabel.length);
 
 // 19. Select all the elements with `id` of `test`
-let idTest = document.querySelectorAll("test");
+let idTest = document.querySelectorAll("#test");
 
 // 20. Select the first element with id `test` using `getElementById`
 let firstTest = document.getElementById("text");
@@ -84,7 +87,7 @@ prevElemOfTopic.innerText = "Learning about walking the DOM";
 
 // 24. Select the first element child of the element stored in `topics` variable (#5) and change the `innerText` property of the element to `This is the first child element`.
 let firstElmTopics = topics.firstElementChild;
-firstElmTopics.innerText = `This is the first child element`
+firstElmTopics.innerText = `This is the first child element`;
 
 
 // 25. Select the last element child of the element stored in `topics` variable (#5) and log the `typeof` the element.
@@ -92,8 +95,9 @@ let lastElmTopic = topics.lastElementChild;
 console.log(typeof lastElmTopic);
 
 // 26. Select the element with type `fieldset` and store in a variable named `fieldsetElm`.
- let fieldsetElm = document.querySelectorAll("fieldset")
+ let fieldsetElm = document.querySelector("fieldset");
 
 
 // 27. Select the parent element of the element stored in `fieldsetElm` variable (#5) and log the `typeof` the element.
-let parentOfFieldset = fieldsetElm.parentElement
+let parentOfFieldset = fieldsetElm.parentElement;
+console.log(typeof parentOfFieldset);
