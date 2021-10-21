@@ -5,7 +5,20 @@ default value to be "text" and return the input element inside label. (create it
 
 */
 
-// Your code goes here
+function createInputElm(label, type="text"){
+
+  let input = document.createElement("input")
+  input.setAttribute("type", type)
+
+  let finalLabel = document.createElement("lable")
+  finalLabel.innerText = finalLabel
+  finalLabel.append(input);  
+
+  document.body.append(finalLabel);
+
+  return input; 
+}
+
 
 // TEST
 createInputElm('Your name'); //<label>Your name: <input type="text"></label>
@@ -13,7 +26,13 @@ createInputElm('Your age', 'number'); //<label>Your age: <input type="number"></
 
 // 2. Do the same thing as above using string literal like `<h1>Hello</h1>`
 
-// Your code goes here
+
+
+function createInputElm(label, type="text"){
+  let final = document.body.innerHTML = `<label> ${label}: <input type = ${type}></label>`
+  return final;
+}
+
 
 // TEST
 createInputElm('Your name'); //<label>Your name: <input type="text"></label>
@@ -21,7 +40,26 @@ createInputElm('Your age', 'number'); //<label>Your age: <input type="number"></
 
 // 3. Create a function named `createList` that accept and array of data like ['Mango', 'Apple', 'Banana'] and returns
 // the html for the link like <ul> <li>Mango</li>  <li>Apple</li>  <li>Banana</li> </ul>
-// Your code goes here
+
+
+function createList(arr){
+
+  let ul = document.createElement("ul");
+
+  for(var i = 0; i < arr.length; i++){
+
+    let li = document.createElement("li");
+    li.innerText = arr[i];
+    ul.append(li)
+  }
+
+  document.body.append(ul);
+
+  return ul;
+
+}
+
+
 
 // TEST
 createList(['ALABAMA', 'ALASKA', 'HAWAII', 'KENTUCKY']);
@@ -39,7 +77,35 @@ createList(['Afghanistan', 'Antarctica', 'Congo', 'Estonia']);
 </ul>
 */
 
-// Your code goes here
+
+function createTodoList(arr){
+ 
+  let ul1 = document.createElement("ul1");
+
+  for(let i = 0; i < arr.length; i++){
+
+    let li = document.createElement("li");
+    let label = document.createElement("label");
+    let input = document.createElement("input");
+    input.setAttribute("type", "checkbox");
+    input.setAttribute("name", "");
+    input.setAttribute("id", "");
+    input.setAttribute("checked", "");
+
+    label.innerText = arr[i].name
+    input.checked = arr[i].isDone
+
+    li.append(label);
+    li.append(input);
+    ul1.append(li);
+    document.body.append(ul1);
+  }
+
+  return ul1;
+}
+
+
+
 
 // TEST
 createTodoList([
@@ -51,3 +117,6 @@ createTodoList([
   { name: 'Learn React', isDone: true },
   { name: 'Learn JS', isDone: true },
 ]);
+
+
+
