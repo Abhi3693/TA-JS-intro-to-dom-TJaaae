@@ -5,18 +5,19 @@ default value to be "text" and return the input element inside label. (create it
 
 */
 
-function createInputElm(label, type="text"){
+function createInputElm(labelMessage, type="text"){
 
-  let input = document.createElement("input")
-  input.setAttribute("type", type)
+  let input = document.createElement("input");
+  let label = document.createElement("lable");
+  input.type = type
 
-  let finalLabel = document.createElement("lable")
-  finalLabel.innerText = finalLabel
-  finalLabel.append(input);  
+  
+  label.innerText = labelMessage
+  label.append(input);  
 
-  document.body.append(finalLabel);
+  document.body.append(label);
 
-  return input; 
+  return label; 
 }
 
 
@@ -29,8 +30,8 @@ createInputElm('Your age', 'number'); //<label>Your age: <input type="number"></
 
 
 function createInputElm(label, type="text"){
-  let final = document.body.innerHTML = `<label> ${label}: <input type = ${type}></label>`
-  return final;
+  let html = document.body.innerHTML = `<label> ${label}: <input type = ${type}></label>`
+  return html;
 }
 
 
@@ -44,18 +45,25 @@ createInputElm('Your age', 'number'); //<label>Your age: <input type="number"></
 
 function createList(arr){
 
-  let ul = document.createElement("ul");
+  // let ul = document.createElement("ul");
 
-  for(var i = 0; i < arr.length; i++){
+  // for(var i = 0; i < arr.length; i++){
 
-    let li = document.createElement("li");
-    li.innerText = arr[i];
-    ul.append(li)
-  }
+  //   let li = document.createElement("li");
+  //   li.innerText = arr[i];
+  //   ul.append(li)
+  // }
 
-  document.body.append(ul);
+  // document.body.append(ul);
 
-  return ul;
+
+  let html = document.body.innerHTML = `<ul>
+  ${arr.map((elm) => `<li>${elm}</li>` ).join("")}
+  </ul`
+
+
+
+  return html;
 
 }
 
@@ -80,28 +88,40 @@ createList(['Afghanistan', 'Antarctica', 'Congo', 'Estonia']);
 
 function createTodoList(arr){
  
-  let ul1 = document.createElement("ul1");
+  //let ul1 = document.createElement("ul1");
 
-  for(let i = 0; i < arr.length; i++){
+  //for(let i = 0; i < arr.length; i++){
 
-    let li = document.createElement("li");
-    let label = document.createElement("label");
-    let input = document.createElement("input");
-    input.setAttribute("type", "checkbox");
-    input.setAttribute("name", "");
-    input.setAttribute("id", "");
-    input.setAttribute("checked", "");
+  //   let li = document.createElement("li");
+  //   let label = document.createElement("label");
+  //   let input = document.createElement("input");
+  //   input.setAttribute("type", "checkbox");
+  //   input.setAttribute("name", "");
+  //   input.setAttribute("id", "");
+  //   input.setAttribute("checked", "");
 
-    label.innerText = arr[i].name
-    input.checked = arr[i].isDone
+  //   label.innerText = arr[i].name
+  //   input.checked = arr[i].isDone
 
-    li.append(label);
-    li.append(input);
-    ul1.append(li);
-    document.body.append(ul1);
-  }
+  //   li.append(label);
+  //   li.append(input);
+  //   ul1.append(li);
+  //   document.body.append(ul1);
+  // }
 
-  return ul1;
+
+   let html = `<ul>
+   ${arr.map((elm) => 
+    `<li>
+      <p>${elm.name}</p>;
+      <input type = "checkbox" ${elm.isDone ? "checked" : ""}
+      <sapn></span
+    </li>`
+   ).join("")}
+   </ul>`
+
+
+  return html;
 }
 
 
