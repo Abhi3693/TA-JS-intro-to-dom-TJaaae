@@ -132,11 +132,13 @@ let data =
 
 
 
+    let body = document.querySelector("body");
+
 
     let ul = document.createElement("ul");
     ul.classList.add("listcontainer");
 
-let final = data.books.forEach((char) => {
+data.books.forEach((char) => {
 
     let li = document.createElement("li");
     li.classList.add("list");
@@ -186,7 +188,7 @@ let final = data.books.forEach((char) => {
     li.append(img,h2,h3,span,span1,span2,span3,p,button);
 
     ul.append(li);
+    body.append(ul);
 
 })
 
-document.body.append(ul);
