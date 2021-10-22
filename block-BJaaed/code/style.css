@@ -1,0 +1,76 @@
+body{
+    background-color: rgb(253,245,232);
+    box-sizing: border-box;
+}
+
+.heading{
+    color: rgb(254,255,84);
+    padding: 20px 0;
+    background-color: rgb(55,124,129);
+    text-align: center;
+    font-size: 36px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.listcontainer{
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-around;
+}
+
+.list{
+    max-width: 45%;
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+    margin: 10px 0;
+    list-style: none;
+    background-color: #fff;
+}
+
+.imgElm{
+    display: inline-block;
+    margin: 10px auto;
+    width: 100%;
+    height: auto;
+}
+
+.title {
+    font-size: 24px;
+    text-align: center;
+    text-transform: capitalize;
+    margin: 10px auto;
+}
+
+.subHeading{
+    font-size: 18px;
+    text-align: center;
+    text-transform: capitalize;
+    margin: 10px auto;
+}
+
+.para{
+    font-size: 14px;
+    color: rgb(150,151,151);
+    text-align: center;
+}
+
+.btn{
+    background-color:rgb(55,124,129) ;
+    color: white;
+    border-radius: 5px;
+    padding: 10px 20px;
+    display: inline-block;
+}
+
+.anchor{
+    color: white;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+.span-text{
+    display: block;
+    margin-top: 10px;
+}
