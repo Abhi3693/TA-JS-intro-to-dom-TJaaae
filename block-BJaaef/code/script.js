@@ -1,4 +1,4 @@
-
+/*
 let allPeople = [];
 
 for (let house of got.houses){
@@ -38,3 +38,32 @@ let final = allPeople.forEach((elm) => {
     ul.append(li);
     
 })
+
+*/
+
+let allPeople = got.houses.reduce((acc, cv) => {
+    acc = acc.concat(cv.people);
+    return acc;
+}, [])
+
+let cardsHTML = allPeople.map((person) => {
+    return (
+        `<li>
+            <div>
+            <img 
+            src=${person.image} 
+            alt=${person.name}>
+            <h2>${person.name}</h2>
+            </div>
+            <p>${person.description}</p>
+            <button>
+            <a href=${person.wikilink}>Learn More!</a>
+            </button>
+        </li> `
+    )
+})
+
+console.log(cardsHTML);
+
+let ul = document.querySelector("ul");
+ul.innerHTML = cardsHTML.join("");
